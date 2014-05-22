@@ -3,9 +3,13 @@ require "httpi"
 require "hashie"
 require "crack/xml"
 require "gyoku"
+require "logger"
 
 require "billink/helpers"
 require "billink/configuration"
+require "billink/api/request"
+require "billink/api/request/check_request"
+require "billink/check"
 
 module Billink
 

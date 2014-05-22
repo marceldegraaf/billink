@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://test.billink.nl/api/check
+    body:
+      encoding: UTF-8
+      string: "<API><VERSION>BILLINK2.0</VERSION><CLIENTUSERNAME>usertest</CLIENTUSERNAME><CLIENTID>d38a3439590889df026367bf01d621e687b8d278</CLIENTID><WORKFLOWNUMBER>2</WORKFLOWNUMBER><ACTION>Check</ACTION><TYPE>P</TYPE><COMPANYNAME>Acme
+        Corp.</COMPANYNAME><CHAMBEROFCOMMERCE>01234567</CHAMBEROFCOMMERCE><FIRSTNAME>John</FIRSTNAME><LASTNAME>Doe</LASTNAME><INITIALS>J.A.</INITIALS><HOUSENUMBER>1</HOUSENUMBER><HOUSEEXTENSION></HOUSEEXTENSION><POSTALCODE>1234AB</POSTALCODE><PHONENUMBER>0612345678</PHONENUMBER><BIRTHDATE>01-01-1990</BIRTHDATE><EMAIL>john@example.com</EMAIL><ORDERAMOUNT>1</ORDERAMOUNT></API>"
+    headers:
+      Content-Type:
+      - text/xml
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.1.19
+      Date:
+      - Thu, 22 May 2014 22:03:57 GMT
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '168'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - symfony=emjua2b3da7hac51r0sn4mo703; path=/
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: "<?xml version='1.0' encoding='UTF-8' ?><API><RESULT>MSG</RESULT><MSG><CODE>500</CODE><DESCRIPTION>Advies=1</DESCRIPTION></MSG><UUID>33fcefe1-8acb-4e8e-bf57-0572894444dc</UUID></API>"
+    http_version: 
+  recorded_at: Thu, 22 May 2014 22:04:00 GMT
+recorded_with: VCR 2.9.0
