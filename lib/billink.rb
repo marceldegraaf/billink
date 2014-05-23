@@ -10,6 +10,7 @@ require "billink/logger"
 require "billink/configuration"
 require "billink/api/request"
 require "billink/api/request/check_request"
+require "billink/api/response"
 require "billink/check"
 
 module Billink

@@ -15,6 +15,7 @@ require "billink"
 VCR.configure do |vcr|
   vcr.cassette_library_dir = "spec/vcr"
   vcr.hook_into :webmock
+  vcr.configure_rspec_metadata!
 end
 
 RSpec.configure do |config|
@@ -22,7 +23,7 @@ RSpec.configure do |config|
   config.color_enabled = true
   config.tty = true
   config.formatter = :progress
-  config.extend VCR::RSpec::Macros
+  config.treat_symbols_as_metadata_keys_with_true_values = true
 
   config.before(:each) do
     hash = YAML.load(File.open('./spec/billink.yml'))

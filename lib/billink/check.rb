@@ -7,18 +7,34 @@ module Billink
                   :birth_date, :email, :order_amount
 
     def perform
-      response = check_request.perform
+      Billink.log("Performing check (company name: #{company_name}, kvk number: #{kvk_number})")
 
-      response.API.MSG.DESCRIPTION == "Advies=1"
+      if response.success?
+        @result = response.description == "Advies=1"
+      else
+        Billink.log("Billink API returned an error: #{response.description}")
+        @result = false
+      end
 
     rescue => e
-      Billink.log("Could not perform check: #{e.message}")
-
-      false
+      Billink.log("Billink API request failed: #{e.message}")
+      @result = false
 
     end
 
+    def positive?
+      @result == true
+    end
+
+    def negative?
+      @result != true
+    end
+
     private
+
+    def response
+      @response ||= Billink::Api::Response.new(response: check_request.perform)
+    end
 
     def check_request
       @check_request ||= Billink::Api::CheckRequest.new(check: self)
