@@ -31,9 +31,5 @@ module Billink
       @log_level || :info
     end
 
-    def logger
-      @logger ||= Billink::Logger.new(log_path: log_path, log_level: log_level)
-    end
-
   end
 end

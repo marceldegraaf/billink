@@ -2,16 +2,15 @@ module Billink
   class Logger
     include Billink::Helpers::AttributeAssignment
 
-    attr_reader :log_path, :log_level
-
-    def log(message)
+    def log(message, log_level = nil)
+      log_level ||= Billink.configuration.log_level
       logger.send(log_level, message)
     end
 
     private
 
     def logger
-      @logger ||= Logger.new(log_path)
+      @logger ||= ::Logger.new(Billink.configuration.log_path)
     end
 
   end

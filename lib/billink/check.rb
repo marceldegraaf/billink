@@ -11,7 +11,9 @@ module Billink
 
       response.API.MSG.DESCRIPTION == "Advies=1"
 
-    rescue
+    rescue => e
+      Billink.log("Could not perform check: #{e.message}")
+
       false
 
     end
