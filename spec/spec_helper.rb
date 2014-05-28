@@ -2,6 +2,7 @@ require 'bundler/setup'
 require 'simplecov'
 require 'simplecov-rcov'
 require "vcr"
+require "fabrication"
 
 SimpleCov.start
 

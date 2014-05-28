@@ -13,6 +13,14 @@ module Billink
         parsed_response.send(response_container).DESCRIPTION
       end
 
+      def uuid
+        parsed_response.UUID.to_s
+      end
+
+      def code
+        parsed_response.send(response_container).CODE.to_i
+      end
+
       private
 
       def parsed_response

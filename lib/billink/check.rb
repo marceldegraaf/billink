@@ -2,15 +2,14 @@ module Billink
   class Check
     include Billink::Helpers::AttributeAssignment
 
-    attr_accessor :type, :company_name, :kvk_number, :first_name, :last_name, :initials,
-                  :house_number, :house_number_extension, :postal_code, :phone_number,
-                  :birth_date, :email, :order_amount
+    attr_accessor :client, :uuid
 
     def perform
-      Billink.log("Performing check (company name: #{company_name}, kvk number: #{kvk_number})")
+      Billink.log("Performing check (company name: #{client.company_name}, kvk number: #{client.kvk_number})")
 
       if response.success?
         @result = response.description == "Advies=1"
+        @uuid = response.uuid
       else
         Billink.log("Billink API returned an error: #{response.description}")
         @result = false

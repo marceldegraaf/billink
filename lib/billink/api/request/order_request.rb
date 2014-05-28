@@ -1,0 +1,43 @@
+module Billink
+  module Api
+    class OrderRequest < Request
+      include Billink::Helpers::AttributeAssignment
+
+      attr_accessor :order
+
+      def body
+        default_body.
+          merge(order_api_fields).
+          merge(order.client.api_fields).
+          merge(order.delivery_address.api_fields).
+          merge(order_items_api_fields)
+      end
+
+      def path
+        "order"
+      end
+
+      private
+
+      def order_api_fields
+        {
+          action: "Order",
+          ordernumber: order.number,
+          type: "P",
+          date: Date.today.strftime("%d-%m-%Y"),
+          workflownumber: 1,
+          checkuuid: order.check_uuid
+        }
+      end
+
+      def order_items_api_fields
+        {
+          orderitems: {
+            item: order.order_items.map(&:api_fields)
+          }
+        }
+      end
+
+    end
+  end
+end

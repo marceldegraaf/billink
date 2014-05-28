@@ -6,7 +6,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "<API><VERSION>BILLINK2.0</VERSION><CLIENTUSERNAME>usertest</CLIENTUSERNAME><CLIENTID>d38a3439590889df026367bf01d621e687b8d278</CLIENTID><WORKFLOWNUMBER>2</WORKFLOWNUMBER><ACTION>Check</ACTION><TYPE>P</TYPE><COMPANYNAME>Acme
-        Corp.</COMPANYNAME><CHAMBEROFCOMMERCE>01234567</CHAMBEROFCOMMERCE><FIRSTNAME>John</FIRSTNAME><LASTNAME>Doe</LASTNAME><INITIALS>J.A.</INITIALS><HOUSENUMBER>1</HOUSENUMBER><HOUSEEXTENSION></HOUSEEXTENSION><POSTALCODE>1234AB</POSTALCODE><PHONENUMBER>0612345678</PHONENUMBER><BIRTHDATE>01-01-1990</BIRTHDATE><EMAIL>john@example.com</EMAIL><ORDERAMOUNT>1</ORDERAMOUNT></API>"
+        Corp.</COMPANYNAME><CHAMBEROFCOMMERCE>01234567</CHAMBEROFCOMMERCE><FIRSTNAME>John</FIRSTNAME><LASTNAME>Doe</LASTNAME><INITIALS>J.A.</INITIALS><SEX>M</SEX><STREET>Damrak</STREET><CITY>Amsterdam</CITY><HOUSENUMBER>1</HOUSENUMBER><HOUSEEXTENSION></HOUSEEXTENSION><POSTALCODE>1234AB</POSTALCODE><PHONENUMBER>0612345678</PHONENUMBER><BIRTHDATE>01-01-1990</BIRTHDATE><EMAIL>john@example.com</EMAIL><ORDERAMOUNT>1</ORDERAMOUNT></API>"
     headers:
       Content-Type:
       - text/xml
@@ -24,15 +24,15 @@ http_interactions:
       Server:
       - nginx/1.1.19
       Date:
-      - Fri, 23 May 2014 15:42:11 GMT
+      - Wed, 28 May 2014 21:56:06 GMT
       Content-Type:
       - text/xml
       Content-Length:
-      - '168'
+      - '169'
       Connection:
       - keep-alive
       Set-Cookie:
-      - symfony=bqi4id9084id99gc4c3pmrr401; path=/
+      - symfony=qvue6k1g41jh54hdgu252ev8d7; path=/
       Expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
       Cache-Control:
@@ -43,7 +43,7 @@ http_interactions:
       - Accept-Encoding
     body:
       encoding: UTF-8
-      string: "<?xml version='1.0' encoding='UTF-8' ?><API><RESULT>MSG</RESULT><MSG><CODE>500</CODE><DESCRIPTION>Advies=1</DESCRIPTION></MSG><UUID>0f94067a-c1e4-4813-bfe4-e178ac734ad3</UUID></API>"
+      string: "<?xml version='1.0' encoding='UTF-8' ?><API><RESULT>MSG</RESULT><MSG><CODE>500</CODE><DESCRIPTION>Advies=1</DESCRIPTION></MSG><UUID>a072fd07-5b91-4cad-8b23-d750481bf616</UUID></API>"
     http_version: 
-  recorded_at: Fri, 23 May 2014 15:42:13 GMT
+  recorded_at: Wed, 28 May 2014 21:56:08 GMT
 recorded_with: VCR 2.9.0

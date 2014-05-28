@@ -1,23 +1,7 @@
 require "spec_helper"
 
 describe Billink::Check do
-  subject {
-    Billink::Check.new(
-      type: "P",
-      company_name: "Acme Corp.",
-      kvk_number: "01234567",
-      first_name: "John",
-      last_name: "Doe",
-      initials: "J.A.",
-      house_number: "1",
-      house_number_extension: "",
-      postal_code: "1234AB",
-      phone_number: "0612345678",
-      birth_date: "01-01-1990",
-      email: "john@example.com",
-      order_amount: "1"
-    )
-  }
+  subject { Fabricate(:check) }
 
   before do
     Billink.should_receive(:log).with(/Performing check/).and_call_original
@@ -31,11 +15,13 @@ describe Billink::Check do
     it "should be positive" do
       subject.perform
       subject.positive?.should == true
+      subject.uuid.should_not be_nil
+      subject.uuid.should_not == ""
     end
   end
 
   context "negative result" do
-    let!(:response) { double(:response) }
+    let!(:response) { double(:response, uuid: "11-22-33-44") }
 
     before do
       subject.stub(:response).and_return(response)
