@@ -11,12 +11,16 @@ require "billink/configuration"
 require "billink/api/request"
 require "billink/api/request/check_request"
 require "billink/api/request/order_request"
+require "billink/api/request/status_request"
 require "billink/api/response"
+require "billink/api/response/status_response"
 require "billink/client"
 require "billink/check"
 require "billink/order"
 require "billink/order_item"
 require "billink/delivery_address"
+require "billink/status"
+require "billink/order_status"
 
 module Billink
 

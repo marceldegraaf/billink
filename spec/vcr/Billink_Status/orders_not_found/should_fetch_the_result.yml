@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://test.billink.nl/api/status
+    body:
+      encoding: UTF-8
+      string: "<API><VERSION>BILLINK2.0</VERSION><CLIENTUSERNAME>usertest</CLIENTUSERNAME><CLIENTID>d38a3439590889df026367bf01d621e687b8d278</CLIENTID><WORKFLOWNUMBER>2</WORKFLOWNUMBER><ACTION>Status</ACTION><INVOICES><ITEM><WORKFLOWNUMBER>2</WORKFLOWNUMBER><INVOICENUMBER>20140714-2231</INVOICENUMBER></ITEM><ITEM><WORKFLOWNUMBER>2</WORKFLOWNUMBER><INVOICENUMBER>20140630-2203</INVOICENUMBER></ITEM></INVOICES></API>"
+    headers:
+      Content-Type:
+      - text/xml
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.1.19
+      Date:
+      - Mon, 14 Jul 2014 21:06:15 GMT
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '215'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - symfony=fvs6sja0o6qjfeiabu2oos6ng3; path=/
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version='1.0' encoding='UTF-8' ?><API>
+          <RESULT>MSG</RESULT>
+          <MSG>
+            <CODE>200</CODE>
+            <INVOICES>
+                <INVOICE>
+                  <INVOICENUMBER>20140714-2231</INVOICENUMBER>
+                  <STATUS>-1</STATUS>
+                  <DESCRIPTION>Order not found</DESCRIPTION>
+                </INVOICE>
+                <INVOICE>
+                  <INVOICENUMBER>20140630-2203</INVOICENUMBER>
+                  <STATUS>-1</STATUS>
+                  <DESCRIPTION>Order not found</DESCRIPTION>
+                </INVOICE>
+
+            </INVOICES>
+          </MSG>
+        </API>
+    http_version: 
+  recorded_at: Mon, 14 Jul 2014 21:06:12 GMT
+recorded_with: VCR 2.9.0
