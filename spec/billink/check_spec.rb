@@ -49,6 +49,7 @@ describe Billink::Check do
 
       subject.perform
       subject.negative?.should == true
+      subject.reason.should == "This is an error"
     end
   end
 

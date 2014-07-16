@@ -5,5 +5,5 @@ Fabricator(:order_item, from: Billink::OrderItem) do
   item_quantity     1
   price_without_vat 39.90
   price_with_vat    47.48
-  vat_percentage    19
+  vat_percentage    21
 end
