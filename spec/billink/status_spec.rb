@@ -1,14 +1,11 @@
 require "spec_helper"
 
 describe Billink::Status do
-  subject { Fabricate(:status) }
-
-  before do
-    Billink.should_receive(:log).with(/Checking status \(order numbers:/).and_call_original
-  end
-
   context "orders not found", :vcr do
+    subject { Fabricate(:status) }
+
     before do
+      Billink.should_receive(:log).with(/Checking status \(order numbers:/).and_call_original
       subject.check
     end
 
