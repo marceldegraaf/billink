@@ -34,11 +34,17 @@ module Billink
     end
 
     def log(message)
-      logger.log(message)
+      logger.log(timestamped_message(message))
     end
 
     def logger
       @logger ||= Billink::Logger.new(log_path: Billink.configuration.log_path)
+    end
+
+    private
+
+    def timestamped_message(message)
+      "[#{Time.now.strftime("%Y-%m-%d %H:%M:%S")}] #{message}"
     end
   end
 
