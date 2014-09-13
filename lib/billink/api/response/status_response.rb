@@ -4,7 +4,7 @@ module Billink
       include Billink::Helpers::AttributeAssignment
 
       def orders
-        @orders ||= Array.new(orders_from_response.INVOICE).flatten.map do |order|
+        @orders ||= orders_from_response.map do |_, order|
           Billink::OrderStatus.new(
             description: order.DESCRIPTION,
             order_number: order.INVOICENUMBER,

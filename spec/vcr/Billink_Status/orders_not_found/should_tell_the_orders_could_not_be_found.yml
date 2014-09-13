@@ -5,7 +5,7 @@ http_interactions:
     uri: http://test.billink.nl/api/status
     body:
       encoding: UTF-8
-      string: "<API><VERSION>BILLINK2.0</VERSION><CLIENTUSERNAME>usertest</CLIENTUSERNAME><CLIENTID>d38a3439590889df026367bf01d621e687b8d278</CLIENTID><WORKFLOWNUMBER>2</WORKFLOWNUMBER><ACTION>Status</ACTION><INVOICES><ITEM><WORKFLOWNUMBER>2</WORKFLOWNUMBER><INVOICENUMBER>20140714-2231</INVOICENUMBER></ITEM><ITEM><WORKFLOWNUMBER>2</WORKFLOWNUMBER><INVOICENUMBER>20140630-2203</INVOICENUMBER></ITEM></INVOICES></API>"
+      string: "<API><VERSION>BILLINK2.0</VERSION><CLIENTUSERNAME>usertest</CLIENTUSERNAME><CLIENTID>d38a3439590889df026367bf01d621e687b8d278</CLIENTID><WORKFLOWNUMBER>2</WORKFLOWNUMBER><ACTION>Status</ACTION><INVOICES><ITEM><workflownumber>2</workflownumber><invoicenumber>20140714-2231</invoicenumber></ITEM><ITEM><workflownumber>2</workflownumber><invoicenumber>20140630-2203</invoicenumber></ITEM></INVOICES></API>"
     headers:
       Content-Type:
       - text/xml
@@ -23,15 +23,15 @@ http_interactions:
       Server:
       - nginx/1.1.19
       Date:
-      - Wed, 16 Jul 2014 21:25:00 GMT
+      - Sat, 13 Sep 2014 10:55:05 GMT
       Content-Type:
       - text/xml
       Content-Length:
-      - '215'
+      - '190'
       Connection:
       - keep-alive
       Set-Cookie:
-      - symfony=ds4ato83n6aug5cjl4sqbpein0; path=/
+      - symfony=jl0g9p5tjpeemv5onbt5eev315; path=/
       Expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
       Cache-Control:
@@ -49,12 +49,7 @@ http_interactions:
             <CODE>200</CODE>
             <INVOICES>
                 <INVOICE>
-                  <INVOICENUMBER>20140714-2231</INVOICENUMBER>
-                  <STATUS>-1</STATUS>
-                  <DESCRIPTION>Order not found</DESCRIPTION>
-                </INVOICE>
-                <INVOICE>
-                  <INVOICENUMBER>20140630-2203</INVOICENUMBER>
+                  <INVOICENUMBER></INVOICENUMBER>
                   <STATUS>-1</STATUS>
                   <DESCRIPTION>Order not found</DESCRIPTION>
                 </INVOICE>
@@ -63,5 +58,5 @@ http_interactions:
           </MSG>
         </API>
     http_version: 
-  recorded_at: Wed, 16 Jul 2014 21:25:02 GMT
+  recorded_at: Sat, 13 Sep 2014 10:55:04 GMT
 recorded_with: VCR 2.9.0

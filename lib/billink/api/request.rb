@@ -12,6 +12,11 @@ module Billink
         response = HTTPI.post(request)
         parsed_response = Crack::XML.parse(response.body)
 
+        if Billink.configuration.debug_mode?
+          Billink.log("RESPONSE XML:  #{response.body}")
+          Billink.log("RESPONSE HASH: #{parsed_response}")
+        end
+
         Hashie::Mash.new(parsed_response)
       end
 
@@ -25,7 +30,7 @@ module Billink
       end
 
       def body; raise 'Implement me in a subclass'; end
-      def path;   raise 'Implement me in a subclass'; end
+      def path; raise 'Implement me in a subclass'; end
 
       private
 
@@ -34,7 +39,14 @@ module Billink
       end
 
       def body_to_xml
-        Gyoku.xml({ API: body }, key_converter: :upcase)
+        xml = Gyoku.xml({ "API" => body.capitalize_keys })
+
+        if Billink.configuration.debug_mode?
+          Billink.log("REQUEST HASH: #{body}")
+          Billink.log("REQUEST XML:  #{xml}")
+        end
+
+        xml
       end
 
     end

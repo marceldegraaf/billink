@@ -21,6 +21,7 @@ require "billink/order_item"
 require "billink/delivery_address"
 require "billink/status"
 require "billink/order_status"
+require "billink/hash_extension.rb"
 
 module Billink
 

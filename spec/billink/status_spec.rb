@@ -5,12 +5,7 @@ describe Billink::Status do
     subject { Fabricate(:status) }
 
     before do
-      Billink.should_receive(:log).with(/Checking status \(order numbers:/).and_call_original
       subject.check
-    end
-
-    it "should fetch the result" do
-      subject.order_statuses.should_not be_empty
     end
 
     it "should tell the orders could not be found" do

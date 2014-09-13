@@ -24,15 +24,15 @@ http_interactions:
       Server:
       - nginx/1.1.19
       Date:
-      - Wed, 16 Jul 2014 21:24:59 GMT
+      - Sat, 13 Sep 2014 10:55:03 GMT
       Content-Type:
       - text/xml
       Content-Length:
-      - '168'
+      - '167'
       Connection:
       - keep-alive
       Set-Cookie:
-      - symfony=9hg5bdsnddt9bgvrcggal9i2u2; path=/
+      - symfony=sl1ovjlr2hrj2perlgd0m10jd5; path=/
       Expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
       Cache-Control:
@@ -43,7 +43,7 @@ http_interactions:
       - Accept-Encoding
     body:
       encoding: UTF-8
-      string: "<?xml version='1.0' encoding='UTF-8' ?><API><RESULT>MSG</RESULT><MSG><CODE>500</CODE><DESCRIPTION>Advies=1</DESCRIPTION></MSG><UUID>d772af41-5963-4a91-ba0a-e75975d89b8a</UUID></API>"
+      string: "<?xml version='1.0' encoding='UTF-8' ?><API><RESULT>MSG</RESULT><MSG><CODE>500</CODE><DESCRIPTION>Advies=1</DESCRIPTION></MSG><UUID>98ec1488-bb48-4b2b-9684-de924d5bdda8</UUID></API>"
     http_version: 
-  recorded_at: Wed, 16 Jul 2014 21:25:01 GMT
+  recorded_at: Sat, 13 Sep 2014 10:55:02 GMT
 recorded_with: VCR 2.9.0

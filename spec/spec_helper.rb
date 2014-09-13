@@ -34,7 +34,7 @@ RSpec.configure do |config|
       config.user_name    = hash['user_name']
       config.workflow_id  = hash['workflow_id']
       config.test_mode    = true
-      config.debug_mode   = false
+      config.debug_mode   = true
     end
   end
 end

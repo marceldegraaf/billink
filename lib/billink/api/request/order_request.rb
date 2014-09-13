@@ -33,7 +33,9 @@ module Billink
       def order_items_api_fields
         {
           orderitems: {
-            item: order.order_items.map(&:api_fields)
+            item: order.order_items.map do |order_item|
+              order_item.api_fields.capitalize_keys
+            end
           }
         }
       end
