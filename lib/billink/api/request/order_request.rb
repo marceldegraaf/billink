@@ -23,7 +23,7 @@ module Billink
         {
           action: "Order",
           ordernumber: order.number,
-          type: "P",
+          type: Billink.configuration.type_code,
           date: Date.today.strftime("%d-%m-%Y"),
           workflownumber: 1,
           checkuuid: order.check_uuid

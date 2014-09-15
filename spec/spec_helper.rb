@@ -30,11 +30,12 @@ RSpec.configure do |config|
     hash = YAML.load(File.open('./spec/billink.yml'))
 
     Billink.configure do |config|
-      config.user_id      = hash['user_id']
-      config.user_name    = hash['user_name']
-      config.workflow_id  = hash['workflow_id']
-      config.test_mode    = true
-      config.debug_mode   = true
+      config.user_id       = hash['user_id']
+      config.user_name     = hash['user_name']
+      config.workflow_id   = hash['workflow_id']
+      config.customer_type = :consumer
+      config.test_mode     = true
+      config.debug_mode    = true
     end
   end
 end

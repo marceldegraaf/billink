@@ -7,7 +7,7 @@ module Billink
 
       def body
         default_body.
-          merge({ action: "Check", type: "P" }).
+          merge({ action: "Check", type: Billink.configuration.type_code }).
           merge(check.client.api_fields)
       end
 

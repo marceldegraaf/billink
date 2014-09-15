@@ -15,6 +15,18 @@ module Billink
       end
     end
 
+    def customer_type=(symbol)
+      case symbol
+        when :business; @type_code = "B"
+        when :consumer; @type_code = "P"
+        else @type_code = default_type_code
+      end
+    end
+
+    def type_code
+      @type_code ||= default_type_code
+    end
+
     def debug_mode?
       debug_mode == true
     end
@@ -29,6 +41,12 @@ module Billink
 
     def log_level
       @log_level || :info
+    end
+
+    private
+
+    def default_type_code
+      "P"
     end
 
   end
