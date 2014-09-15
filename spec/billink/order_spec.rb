@@ -10,10 +10,6 @@ describe Billink::Order do
 
   subject { Fabricate(:order, check_uuid: @uuid) }
 
-  before do
-    # Billink.should_receive(:log).with(/Submitting order/).and_call_original
-  end
-
   context "successful request", :vcr do
     it "should return a success status" do
       subject.submit
@@ -24,8 +20,6 @@ describe Billink::Order do
   context "request with errors", :vcr do
     it "should log the error" do
       @uuid = nil
-
-      # Billink.should_receive(:log).with(/Billink API returned an error/).and_call_original
 
       subject.submit
       subject.success?.should == false
