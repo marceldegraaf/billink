@@ -11,6 +11,7 @@ module Billink
         HTTPI.log = true
         HTTPI.log_level = :debug
       else
+        HTTPI.log_level = :info
         HTTPI.log = false
       end
     end
