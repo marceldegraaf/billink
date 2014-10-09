@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    billink (0.2.0)
+    billink (0.2.1)
       crack
       gyoku
       hashie
