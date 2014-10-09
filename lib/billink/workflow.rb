@@ -2,10 +2,10 @@ module Billink
   class Workflow
     include Billink::Helpers::AttributeAssignment
 
-    attr_accessor :client, :order_numbers, :workflow_number, :reason
+    attr_accessor :client, :order_numbers, :reason
 
     def start
-      Billink.log("Starting workflow with number #{workflow_number}")
+      Billink.log("Starting workflow for orders: #{order_numbers.join(', ')}")
 
       if response.success?
         @reason = ""

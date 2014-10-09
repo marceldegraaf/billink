@@ -18,6 +18,8 @@ module Billink
 
     rescue => e
       Billink.log("Billink API request failed: #{e.message}")
+      Billink.log_exception(e)
+
       @reason = e.message
       @result = false
 

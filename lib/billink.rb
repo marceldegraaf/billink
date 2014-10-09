@@ -40,6 +40,18 @@ module Billink
       logger.log(timestamped_message(message))
     end
 
+    def log_exception(exception)
+      log("Message: #{exception.message}")
+
+      log("-------------- Backtrace --------------")
+
+      exception.backtrace.first(10).each do |line|
+        log(line)
+      end
+
+      log("---------------------------------------")
+    end
+
     def logger
       @logger ||= Billink::Logger.new(log_path: Billink.configuration.log_path)
     end

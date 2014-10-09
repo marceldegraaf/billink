@@ -26,7 +26,8 @@ module Billink
           type: Billink.configuration.type_code,
           date: Date.today.strftime("%d-%m-%Y"),
           workflownumber: Billink.configuration.workflow_id,
-          checkuuid: order.check_uuid
+          checkuuid: order.check_uuid,
+          additionaltext: order.additional_text
         }
       end
 
