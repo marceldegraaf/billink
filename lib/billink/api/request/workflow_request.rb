@@ -6,7 +6,11 @@ module Billink
       attr_accessor :workflow
 
       def body
-        default_body.
+        body = default_body
+
+        body.delete(:workflownumber)
+
+        body.
           merge({ action: "activate order" }).
           merge(workflow_orders_fields)
       end
